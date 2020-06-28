@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-28T14:53:43.756Z</updated>
+  <updated>2020-06-28T15:36:25.790Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>build your blog</title>
+    <link href="http://yoursite.com/2020/06/28/how%20to%20build%20your%20blog_/"/>
+    <id>http://yoursite.com/2020/06/28/how to build your blog_/</id>
+    <published>2020-06-28T15:35:55.000Z</published>
+    <updated>2020-06-28T15:36:25.790Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="用hexo搭建你的blog"><a href="#用hexo搭建你的blog" class="headerlink" title="用hexo搭建你的blog"></a>用hexo搭建你的blog</h2><p>refenrence：<br>build bog:<a href="https://www.jianshu.com/p/ef3f221a0374" target="_blank" rel="noopener">https://www.jianshu.com/p/ef3f221a0374</a><br>change theme:<a href="https://www.jianshu.com/p/869c6bcd0647" target="_blank" rel="noopener">https://www.jianshu.com/p/869c6bcd0647</a><br>关联域名：<a href="https://zhuanlan.zhihu.com/p/22183337" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/22183337</a></p><h2 id="我的blog"><a href="#我的blog" class="headerlink" title="我的blog"></a>我的blog</h2><p>之前一直忘记放自己的blog地址了，其实会跟csdn同步更新:<br><a href="https://phoebeyu731.github.io/" target="_blank" rel="noopener">Phoebe’s blog</a><br>我用的是archer主题，如果想看看这个主题的搭建效果的，欢迎来我的blog参观！</p><h2 id="给blog加分类和标签"><a href="#给blog加分类和标签" class="headerlink" title="给blog加分类和标签"></a>给blog加分类和标签</h2><p>refenrence：<br><a href="https://blog.csdn.net/smileyan9/article/details/86666602" target="_blank" rel="noopener">https://blog.csdn.net/smileyan9/article/details/86666602</a><br>我的总结如下：<br>  其实本来我用的archer主题就是带有tag和category的页面的，如下图：<br>  <img src="https://img-blog.csdnimg.cn/20200628231229402.png" alt="在这里插入图片描述"><br>  所以就很好办了，如果在自己的主题里没有看到有自带这个，可以检查自己的_config.yml文件<br>中相关项的值有没有设为true，如下图：<br><img src="https://img-blog.csdnimg.cn/20200628231600155.png" alt="在这里插入图片描述"><br>检查好了之后，自己的每篇要push上去的文章在开头都加上你想要的加的tags和categories，如下图：<br><img src="https://img-blog.csdnimg.cn/20200628232004619.png" alt="在这里插入图片描述"><br>再直接按照命令更新上去就可以啦。</p><h2 id="常用的command命令"><a href="#常用的command命令" class="headerlink" title="常用的command命令"></a>常用的command命令</h2><p>push：hexo d -g<br>run at localhost：hexo s（有时候远程不能很快就更新，可以先在本地运行，就能看见远程的更新了）<br>create new blog：hexo new “file name”<br>refenrence：<a href="https://blog.csdn.net/weixin_34239592/article/details/91448749" target="_blank" rel="noopener">https://blog.csdn.net/weixin_34239592/article/details/91448749</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;用hexo搭建你的blog&quot;&gt;&lt;a href=&quot;#用hexo搭建你的blog&quot; class=&quot;headerlink&quot; title=&quot;用hexo搭建你的blog&quot;&gt;&lt;/a&gt;用hexo搭建你的blog&lt;/h2&gt;&lt;p&gt;refenrence：&lt;br&gt;build bog:&lt;
+      
+    
+    </summary>
+    
+      <category term="小白的技术成长之路" scheme="http://yoursite.com/categories/%E5%B0%8F%E7%99%BD%E7%9A%84%E6%8A%80%E6%9C%AF%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/"/>
+    
+    
+      <category term="hexo blog" scheme="http://yoursite.com/tags/hexo-blog/"/>
+    
+  </entry>
   
   <entry>
     <title>大创学习记录（二）</title>
