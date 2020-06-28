@@ -42,7 +42,7 @@
     <link href="http://yoursite.com/2020/05/02/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://yoursite.com/2020/05/02/大创学习记录（一）/</id>
     <published>2020-05-02T02:48:55.000Z</published>
-    <updated>2020-05-06T13:35:07.685Z</updated>
+    <updated>2020-06-28T14:46:52.883Z</updated>
     
     <content type="html"><![CDATA[<p>  把之前在csdn上写的两篇文章直接搬过来啦<br>  不久前看到了知乎上的一篇文章，《疫情期间大学生应该如何提升自己》，看完所有的文字，就觉得自己参加这样一个大创项目是多么的必要，目前大二的我已经参与了这是第二个大创项目，很幸运身边可以有大佬朋友愿意带我，但是说实话，第一个大创项目，我没有非常认真的去参与，这真是我非常后悔的一点，到现在也还没有结题，所以可能后期希望自己能为团队贡献自己的一点力量。但是！在这里我准备记录我参与的第二个大创项目，从组队到联系老师，再到写申请立项书，我都参与其中，希望能够真正的主动地去学习到有用的东西。<br>   好了，话不多说，开始今天的记录。<br>   首先，有目标才会有动力，有目标才会有计划。<br>   我们的项目是基于深度学习中的卷积神经网络（Faster R-CNN)以及YOLOv3预测模型，并不断用机器学习来优化算法，按照项目负责人的要求，近两周的学习计划如下，主要是先打个基础：</p><ol><li>学习深度学习相关知识。上<a href="http://eds.tju.edu.cn/ermsClient/browse.do查阅相关文献。top等级的论文几乎都在SCI上，登录资源平台外文数据库第一个web" target="_blank" rel="noopener">http://eds.tju.edu.cn/ermsClient/browse.do查阅相关文献。top等级的论文几乎都在SCI上，登录资源平台外文数据库第一个web</a> of science。</li><li>熟悉tensorflow框架。安装Anaconda，它是一个容器，然后在它里面可以搭建深度学习环境，安装Python, Numpy， Matplotlib，Tensorflow或者pytorch包。代码编辑器可以用VS code。</li><li>学习相关编程语言的语法。我们的算法用python实现，web用html+javascript。</li></ol><p>今天准备先搭建好tensorflow框架。<br>在网上看到，2019年春季，google发布了Tensorflow2.0测试版本。</p><p>指导老师温馨提醒：要注意自己的机器的配置，尤其是显卡。一般nVidia显卡可以装tensorflow的GPU版本，不是的话就装CPU版本。<br>笔者在我的电脑中的管理查了一下自己的显卡，发现自己的是Nvida GTX1050 Ti,运算能力4以上，符合安装GPU版本的要求。</p><p><strong>Anaconda + TensorFlow 2.0 GPU安装</strong></p><p><strong><em>Anoconda3下载</em></strong><br>下载官网<a href="https://www.anaconda.com/distribution/#download-section" target="_blank" rel="noopener">Anoconda3下载地址</a><br>建议安装Python 3.7 version,之后的操作比较方便<br>下载下来后一直next<br><img src="https://img-blog.csdnimg.cn/20200413103927732.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p><p>安装好后在开始菜单中找到Anaconda Prompt（开始菜单），如下图：<br><img src="https://img-blog.csdnimg.cn/20200413155540510.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在命令行中输入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n your_env_name python&#x3D;X.X</span><br></pre></td></tr></table></figure><p>your env name可以自己改，最好和用这个环境要安装的主力包有关，比如我用这个环境装了Tensorflow2.0.0beta1-gpu，我就把环境简单命名成tf2.0b。后面跟的是python版本号，因为我下的是3.7所以就改成python=3.7。之后让你回答Y/N，输入y就好。<br>安装成功后，命令行中输入<br><img src="https://img-blog.csdnimg.cn/20200413155957659.png" alt="在这里插入图片描述"><br>将环境激活，结果如图：<br><img src="https://img-blog.csdnimg.cn/20200413160203396.png" alt="在这里插入图片描述"><br>这个时候就可以在自己的虚拟环境下安装Tensorflow或者Pytorch, Numpy， Matplotlib等了。</p><p><strong><em>Tensorflow2.0 GPU安装</em></strong></p><p>Tensorflow2.0还没被收到anaconda库，所以需要用pip安装。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu&#x3D;&#x3D;2.0.0b1</span><br></pre></td></tr></table></figure><p>之后就一直安装就可以了，这个过程我花了几乎一天的时间下载，安装好了命令行输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure><p>可以看到<br><img src="https://img-blog.csdnimg.cn/20200413235433349.png" alt="在这里插入图片描述"><br>有以上图中显示的条目，包括上面还有keras的，因为tf2.0把keras高度集成了。<br>接下来如果是安装的CPU，就不会有以下的步骤了。<br><strong><em>安装cuda和cudnn</em></strong><br>这个我本来以为只用用命令行就可以安装，于是之前试了用conda直接下载。tf2.0对于cuda的支持暂时仅限于10.0，cudnn是7.6.0。所以安装的时候要指定版本号。<br>在命令行输入如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install cudnn&#x3D;7.6.0</span><br><span class="line">conda install cudatoolkit&#x3D;10.0.130</span><br></pre></td></tr></table></figure><p>但是后来过了一天打开tensorflow，准备运行一下简单的“Hello, tensorflow!”的程序，结果第一步import tensorflow就一直在报错，如下图：<br><img src="https://img-blog.csdnimg.cn/20200418213610871.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">是cuda和cudnn的问题，查了很多资料也没解决，于是去问了老师，老师说不能直接用虚拟环境下的命令行来安装cuda和cudnn，还是之前踩了坑，所以还是应该在网上下载好安装包，于是在网上按照教程开始下载安装。<br><strong><em>安装CUDA Toolkit + cuDNN</em></strong><br>1.查看需要安装的CUDA+cuDNN版本<br>注意，tensorflow是在持续更新的，具体安装的CUDA和cuDNN版本需要去官网查看，要与最新版本的tensorflow匹配。<br>2.下载CUDA + cuDNN<br>在这个网址查找CUDA已发布版本：<a href="https://developer.nvidia.com/cuda-toolkit-archive" target="_blank" rel="noopener">https://developer.nvidia.com/cuda-toolkit-archive</a><br>下载好CUDA Toolkit 10.0 后，我们开始下载cuDnn，需要注意的是，下载cuDNN需要在nvidia上注册账号，使用邮箱注册就可以，免费的。登陆账号后才能下载。</p><p>cuDNN历史版本在该网址下载：<a href="https://developer.nvidia.com/rdp/cudnn-archive" target="_blank" rel="noopener">https://developer.nvidia.com/rdp/cudnn-archive</a><br><strong>重要的一步：卸载显卡驱动</strong><br>由于CUDA Toolkit需要在指定版本显卡驱动环境下才能正常使用的，所以如果我们已经安装了nvidia显卡驱动（很显然，大部分人都安装了），再安装CUDA Toolkit时，会因二者版本不兼容而导致CUDA无法正常使用，这也就是很多人安装失败的原因。而CUDA Toolkit安装包中自带与之匹配的显卡驱动，所以务必要删除电脑先前的显卡驱动。<br>（搜索栏—-控制面板—程序—-卸载或更改程序—-选择NVIDIA的显卡驱动）<br><strong>安装CUDA</strong><br>我在安装的时候遇到了一个问题，显示Chrome_elf.dll不能创建，查了一下资料，把电脑360安全防护什么的关掉就行了，但是并不知道是什么原理。<br>点击下载好的安装包，选择安装的文件夹，同意并继续，然后下面这里选择自定义：<br><img src="https://img-blog.csdnimg.cn/2020041822462037.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>后面一系列通过以后，又遇到了这个问题：<br><img src="https://img-blog.csdnimg.cn/20200419002649219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>百度了一下，才发现是VS的问题<br>于是我找了所有有关的百度，找到了DDU，它可以帮助我们删除显卡驱动，于是就去下载了（网址：<a href="https://www.wagnardsoft.com/forums/viewtopic.php?f=5&t=1490" target="_blank" rel="noopener">https://www.wagnardsoft.com/forums/viewtopic.php?f=5&amp;t=1490</a> ）<br>运行成功后重启电脑，然后重新安装cuda，这时候就要比较小心，点击自定义，转到另一个可以自定义功能的界面，把vs相关的那一项的勾选去掉，然后就ok了，最后显示安装成功！亲测有效啊！<br>接下来，解压cudnn下载下来的压缩文件的三个文件夹，拷贝到CUDA安装的根目录下。<br>下面要进行环境变量的配置。</p><p>将下面四个路径加入到环境变量中，注意要换成自己的安装路径。</p><p>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0</p><p>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\bin</p><p>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\lib\x64</p><p>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v9.0\libnvvp</p><p>到此，全部的安装步骤都已经完成，我们来测试一下。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line">tf.test.gpu_device_name()</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200419110549853.png" alt="在这里插入图片描述"><br>2.查看在使用哪个GPU</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from tensorflow.python.client import device_lib</span><br><span class="line">device_lib.list_local_devices()</span><br></pre></td></tr></table></figure><p><img src="https://img-blog.csdnimg.cn/20200419110826466.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>好了，到这里终于大功告成，下载安装这个从昨天到今天又弄了大半天，于是打算今天稍晚点再开始真正的跑跑代码，学习一下tensorflow的一些基本用法和算法实例。</p><p><strong><em>安装matplotlib</em></strong><br>命令行输入：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib</span><br></pre></td></tr></table></figure><p>显示结果如下，则安装成功。<img src="https://img-blog.csdnimg.cn/20200414004928846.png" alt="在这里插入图片描述"></p><p>至此，环境基本上都搭建好了，用来写代码的vs code 之前也已经安装过了。</p>]]></content>
     
@@ -55,55 +55,10 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>firstblog</title>
-    <link href="http://yoursite.com/2020/04/30/firstblog-1/"/>
-    <id>http://yoursite.com/2020/04/30/firstblog-1/</id>
-    <published>2020-04-30T07:31:42.000Z</published>
-    <updated>2020-04-30T07:31:42.588Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
+      <category term="大创学习体会" scheme="http://yoursite.com/categories/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E4%BD%93%E4%BC%9A/"/>
     
     
-  </entry>
-  
-  <entry>
-    <title>Phoebe&#39;s firstblog</title>
-    <link href="http://yoursite.com/2020/04/30/firstblog/"/>
-    <id>http://yoursite.com/2020/04/30/firstblog/</id>
-    <published>2020-04-30T07:18:31.000Z</published>
-    <updated>2020-04-30T07:19:54.685Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Phoebe&#39;s first blog</title>
-    <link href="http://yoursite.com/2020/04/30/hello-world/"/>
-    <id>http://yoursite.com/2020/04/30/hello-world/</id>
-    <published>2020-04-30T06:32:06.663Z</published>
-    <updated>2020-04-30T07:02:45.410Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
+      <category term="tensorflow" scheme="http://yoursite.com/tags/tensorflow/"/>
     
   </entry>
   
