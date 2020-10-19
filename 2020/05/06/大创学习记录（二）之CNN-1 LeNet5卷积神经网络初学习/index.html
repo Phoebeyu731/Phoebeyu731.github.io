@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta name="description" content="五一假期忙忙碌碌就快过去了，虽然也不知道具体自己都在忙些什么，但是还是每天都有每天的收获，很充实，我常常在想人为什么需要假期，忙着奔跑之后的停顿可能也会带来一些小惊喜，对我来说，可能是去野餐瞥见阳光下的夏天的味道让人沉溺的只想睡去，可能是去串门发现高二的妹妹满墙的公式单词和“鸡汤”拼命地把我往回忆里拽，原来那时看起来那么幼稚的举动竟然真的能给现在的我这么大的力量……哈哈哈还是改不了一开始在键盘">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大创学习记录（二）">
+<meta property="og:title" content="大创学习记录（二）之CNN-1 LeNet5卷积神经网络初学习">
 <meta property="og:url" content="http://yoursite.com/2020/05/06/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8BCNN-1%20LeNet5%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="五一假期忙忙碌碌就快过去了，虽然也不知道具体自己都在忙些什么，但是还是每天都有每天的收获，很充实，我常常在想人为什么需要假期，忙着奔跑之后的停顿可能也会带来一些小惊喜，对我来说，可能是去野餐瞥见阳光下的夏天的味道让人沉溺的只想睡去，可能是去串门发现高二的妹妹满墙的公式单词和“鸡汤”拼命地把我往回忆里拽，原来那时看起来那么幼稚的举动竟然真的能给现在的我这么大的力量……哈哈哈还是改不了一开始在键盘">
@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200506173250687.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200506211036738.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ZmZl9wcmFncmFtbWVy,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-05-06T13:34:55.000Z">
-<meta property="article:modified_time" content="2020-06-28T14:53:43.756Z">
+<meta property="article:modified_time" content="2020-10-19T09:58:13.128Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="LeNet-5">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
     
     <link rel="alternate" href="/atom.xml" title="Phoebe&#39;s blog" type="application/atom+xml">
     
-    <title>大创学习记录（二） · Phoebe&#39;s blog</title>
+    <title>大创学习记录（二）之CNN-1 LeNet5卷积神经网络初学习 · Phoebe&#39;s blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -248,7 +248,7 @@
                 <a href="/" >Phoebe&#39;s blog</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">大创学习记录（二）</a>
+                <a href="#" class="post-name">大创学习记录（二）之CNN-1 LeNet5卷积神经网络初学习</a>
             </div>
     </div>
     
@@ -278,7 +278,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            大创学习记录（二）
+            大创学习记录（二）之CNN-1 LeNet5卷积神经网络初学习
             <!-- 404 -->
             
         </h1>
@@ -468,8 +468,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/05/02/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title= "大创学习记录（一）">
-                    <div class="prevTitle">大创学习记录（一）</div>
+                <a href= "/2020/05/02/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title= "大创学习记录（一）之环境配置">
+                    <div class="prevTitle">大创学习记录（一）之环境配置</div>
                 </a>
             
         </li>
@@ -737,12 +737,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/06</span><a class="archive-post-title" href= "/2020/05/06/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8BCNN-1%20LeNet5%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%AD%A6%E4%B9%A0/" >大创学习记录（二）</a>
+            <span class="archive-post-date">05/06</span><a class="archive-post-title" href= "/2020/05/06/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C%EF%BC%89%E4%B9%8BCNN-1%20LeNet5%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%88%9D%E5%AD%A6%E4%B9%A0/" >大创学习记录（二）之CNN-1 LeNet5卷积神经网络初学习</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" >大创学习记录（一）</a>
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/%E5%A4%A7%E5%88%9B%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80%EF%BC%89%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" >大创学习记录（一）之环境配置</a>
         </li>
     
     </div>
